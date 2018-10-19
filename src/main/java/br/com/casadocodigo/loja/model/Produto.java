@@ -1,4 +1,4 @@
-package br.com.casadocodigo.loja.controller.model;
+package br.com.casadocodigo.loja.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
