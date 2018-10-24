@@ -20,14 +20,14 @@ import br.com.casadocodigo.loja.model.ProdutoValidation;
 import br.com.casadocodigo.loja.model.TipoPreco;
 
 @Controller
-@RequestMapping("produtos")
+@RequestMapping("/produtos")
 public class ProdutosController {
 
 	@Autowired
 	private ProdutoDAO produtoDao;
 	
 	@InitBinder
-	public void InitBinder(WebDataBinder binder) {
+	public void initBinder(WebDataBinder binder) {
 		binder.addValidators(new ProdutoValidation());
 	}
 	
@@ -39,7 +39,7 @@ public class ProdutosController {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST)
-	public ModelAndView gravar(@Valid Produto produto, RedirectAttributes redirectAttributes, BindingResult validations) {
+	public ModelAndView gravar(@Valid Produto produto, BindingResult validations, RedirectAttributes redirectAttributes) {
 		
 		if(validations.hasErrors()) {
 			return form();

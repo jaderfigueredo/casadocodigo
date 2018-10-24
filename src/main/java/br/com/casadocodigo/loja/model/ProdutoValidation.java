@@ -7,9 +7,8 @@ import org.springframework.validation.Validator;
 public class ProdutoValidation implements Validator{
 	
 	@Override
-	public boolean supports(Class<?> arg0) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean supports(Class<?> clazz) {
+		return Produto.class.isAssignableFrom(clazz);
 	}
 
 	@Override
